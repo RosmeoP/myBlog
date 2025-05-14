@@ -1,12 +1,22 @@
+'use client'
 
-export default function BlogView() {
-    return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-black text-decoration-line: underline decoration-white">
-            <h2 className="text-[100px] text-white font-bold tracking-wide" >
-                WELCOME TO ROSMEO'S <br /> PERSONAL BLOG
-            </h2>
-           
-          
-        </div>
-    )
+import TrueFocus from './TrueFocus';
+
+const View = () => {
+  return (
+    <div className='bg-black w-full min-h-screen flex items-center justify-center px-4 overflow-hidden'>
+      <TrueFocus 
+        sentence="WELCOME TO ROSMEO'S PERSONAL BLOG"
+        manualMode={false}
+        blurAmount={4}
+        borderColor="white"
+        animationDuration={1.5}
+        pauseBetweenAnimations={1}
+      />
+    </div>
+  )
 }
+
+export default View
+
+
