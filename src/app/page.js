@@ -1,4 +1,3 @@
-
 import BlogView from "./pages/blogView/view";
 
 
