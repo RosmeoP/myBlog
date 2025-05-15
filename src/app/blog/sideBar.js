@@ -16,9 +16,9 @@ export default function Sidebar() {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-sm sm:text-base md:text-xl font-bold text-black leading-tight">
-          Rosmeo
+          Rosmeo's blog
         </h1>
-        <p className="hidden md:block text-sm text-gray-500 mt-1">
+        <p className="block text-sm text-gray-500 mt-1">
           Thoughts, stories & more
         </p>
       </div>
