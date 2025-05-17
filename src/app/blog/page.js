@@ -1,6 +1,7 @@
-import React from 'react'
-import Sidebar from './sideBar'
-import { LatestPost } from './latestPost'
+'use client';
+import React from 'react';
+import Sidebar from './sideBar';
+import { LatestPost } from './latestPost'; 
 
 const latestPost = {
   id: '1',
@@ -16,20 +17,16 @@ const latestPost = {
   imageUrl: 'https://images.unsplash.com/photo-1587614382346-ac5ce068fe85',
 };
 
-const page = () => {
+const Page = () => {
   return (
     <div className="flex flex-col md:flex-row">
-  {/* Main Content */}
-  <main className="w-full md:w-3/4 px-4 py-6">
-    {/* Blog content goes here */}
-  </main>
+      <main className="w-full md:w-3/4 px-4 py-6 space-y-6">
+        <LatestPost post={latestPost} />
+      </main>
 
-  {/* Sidebar */}
-  
-  <Sidebar />
-</div>
-  )
-}
+      <Sidebar />
+    </div>
+  );
+};
 
-export default page
-
+export default Page;
