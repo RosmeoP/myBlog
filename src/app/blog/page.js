@@ -11,12 +11,12 @@ const latestPost = {
   date: 'May 16, 2025',
   author: {
     name: 'Mauricio Parada',
-    avatar: 'https://i.pravatar.cc/150?img=3',
   },
   category: 'Development',
   readTime: '5 min read',
-  imageUrl: 'https://images.unsplash.com/photo-1587614382346-ac5ce068fe85',
+  imageUrl: '',
 };
+
 
 const Page = () => {
   return (

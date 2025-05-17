@@ -10,75 +10,68 @@ export function LatestPost({ post, className }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const imageUrl =
-    post.imageUrl || 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7';
+  post.imageUrl?.trim() !== ''
+    ? post.imageUrl
+    : 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7';
+
   const postLink = `/blog/${post.id}`;
 
   return (
     <article
       className={cn(
         'w-full relative group overflow-hidden transition-all duration-500 bg-black border border-border',
-        'rounded-none md:rounded-l-xl', // Only round left side on desktop
-        'hover:border-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.15)]',
+        'hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]',
         className
       )}
     >
       <div className="flex flex-col md:flex-row">
         {/* Image */}
-        <div className="relative w-full md:w-1/2 aspect-[16/10] md:aspect-auto overflow-hidden rounded-none md:rounded-l-xl">
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-700"
-            style={{
-              backgroundImage: `url(${imageUrl})`,
-              transform: isHovered ? 'scale(1.05)' : 'scale(1)',
-            }}
+        <div className="w-full md:w-1/2">
+          <img
+            src={imageUrl}
+            alt={post.title}
+            className="w-full h-full object-cover max-h-[300px] md:max-h-full"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/5" />
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-6 md:p-8 w-full flex flex-col justify-between text-white rounded-none">
-          <div className="space-y-4">
+        <div className="p-6 sm:p-8 md:p-10 w-full flex flex-col justify-between text-white">
+          <div className="space-y-6">
             <div className="flex items-center justify-between">
               <Badge
                 variant="outline"
-                className="border-white/20 text-xs font-medium tracking-wide bg-black/20 backdrop-blur-sm text-white"
+                className="border-white/20 text-sm font-medium tracking-wide bg-black/20 backdrop-blur-sm text-white"
               >
                 {post.category}
               </Badge>
-              <span className="text-xs text-white/60">{post.readTime}</span>
+              <span className="text-sm text-white/60">{post.readTime}</span>
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-bold leading-tight tracking-tighter">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
               {post.title}
             </h2>
 
-            <p className="text-sm text-white/80 line-clamp-3">{post.excerpt}</p>
+            <p className="text-base text-white/80 leading-relaxed line-clamp-4">
+              {post.excerpt}
+            </p>
           </div>
 
-          <div className="mt-6 pt-6 border-t border-white/20 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full overflow-hidden bg-muted">
-                <img
-                  src={post.author.avatar}
-                  alt={post.author.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-sm font-medium text-white">
-                  {post.author.name}
-                </span>
-                <span className="text-xs text-white/60">{post.date}</span>
-              </div>
+          <div className="mt-8 pt-6 border-t border-white/20 flex items-center justify-between">
+            {/* Keep Name + Date */}
+            <div className="flex flex-col">
+              <span className="text-base font-medium text-white">
+                {post.author.name}
+              </span>
+              <span className="text-sm text-white/60">{post.date}</span>
             </div>
 
             <Link
               href={postLink}
-              className="group/btn relative inline-flex items-center gap-1 text-sm font-medium text-white"
+              className="group/btn relative inline-flex items-center gap-1 text-base font-medium text-white"
             >
               Read more
               <ArrowRight
-                size={16}
+                size={18}
                 className={cn(
                   'transition-transform duration-300',
                   isHovered ? 'translate-x-1' : ''
