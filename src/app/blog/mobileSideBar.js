@@ -5,26 +5,20 @@ import Link from 'next/link';
 import { X } from 'lucide-react';
 
 const categories = [
-  { name: "Self Development", label: "Development" },
-  { name: "Fitness & Wellness", label: "Fitness" },
-  { name: "Tech & Coding", label: "Tech" },
-  { name: "Outdoor & Adventure", label: "Outdoor" },
-  { name: "Music & Arts", label: "Music" },
-  { name: "Faith & Spirituality", label: "Faith" },
-  { name: "Quotes & Inspiration", label: "Quotes" },
+  { name: 'Self Development', label: 'Development' },
+  { name: 'Fitness & Wellness', label: 'Fitness' },
+  { name: 'Tech & Coding', label: 'Tech' },
+  { name: 'Outdoor & Adventure', label: 'Outdoor' },
+  { name: 'Music & Arts', label: 'Music' },
+  { name: 'Faith & Spirituality', label: 'Faith' },
+  { name: 'Quotes & Inspiration', label: 'Quotes' },
 ];
 
 export default function MobileSidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Lock body scroll when sidebar is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
+    document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => {
       document.body.style.overflow = '';
     };
@@ -34,22 +28,21 @@ export default function MobileSidebar() {
     <>
       {/* Toggle Button */}
       {!isOpen && (
-  <button
-    className="fixed top-4 left-4 z-50 p-2 bg-white rounded-md shadow-md md:hidden"
-    onClick={() => setIsOpen(true)}
-  >
-    <svg
-      className="w-6 h-6 text-black"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      viewBox="0 0 24 24"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  </button>
-)}
-
+        <button
+          className="fixed top-4 left-4 z-50 p-2 bg-white rounded-md shadow-md md:hidden"
+          onClick={() => setIsOpen(true)}
+        >
+          <svg
+            className="w-6 h-6 text-black"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      )}
 
       {/* Drawer Container */}
       <div
@@ -72,14 +65,14 @@ export default function MobileSidebar() {
 
           <div className="ml-1">
             <h3 className="text-sm font-semibold uppercase text-gray-700 mb-4">Categories</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {categories.map(({ name, label }) => {
-                const slug = name.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and");
+                const slug = name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
                 return (
                   <li key={name}>
                     <Link
                       href={`/categories/${slug}`}
-                      className="block text-base font-medium text-black hover:underline"
+                      className="block text-base font-semibold text-black hover:underline"
                       onClick={() => setIsOpen(false)}
                     >
                       {label}
