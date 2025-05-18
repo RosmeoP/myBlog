@@ -31,7 +31,7 @@ export const posts = [
     category: 'Development',
     author: { name: 'Rosmeo' },
     date: '2025-05-03',
-    excerpt: 'Yet another short intro...',
+    excerpt: 'Yet another short intro... lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     readTime: '5 min',
   },
 ];
