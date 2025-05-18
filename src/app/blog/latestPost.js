@@ -17,6 +17,7 @@ export function LatestPost({ post, className }) {
   const postLink = `/blog/${post.id}`;
 
   return (
+    
     <article
       className={cn(
         'w-full relative group overflow-hidden transition-all duration-500 bg-black border border-border',

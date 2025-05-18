@@ -3,22 +3,12 @@
 import MobileSidebar from './mobileSideBar';
 import Sidebar from './sideBar';
 import { LatestPost } from './latestPost';
-
-const latestPost = {
-  id: '1',
-  title: 'Building a Blog with Next.js and Tailwind',
-  excerpt: 'Learn how to build a fast, modern blog using Next.js and Tailwind CSS with clean, reusable components.',
-  date: 'May 16, 2025',
-  author: {
-    name: 'Mauricio Parada',
-  },
-  category: 'Development',
-  readTime: '5 min read',
-  imageUrl: '',
-};
-
+import { posts } from '../../lib/posts';
+const latestPost = posts[0]; 
 
 const Page = () => {
+    console.log('LatestPost data:', posts);
+
   return (
     <div className="w-full overflow-x-hidden">
       {/* Mobile Sidebar: visible only on small screens */}
@@ -42,6 +32,7 @@ const Page = () => {
 
           <aside className="w-full md:w-1/4 px-4 md:px-0">
             {/* Optional widgets */}
+            
           </aside>
         </div>
       </div>
