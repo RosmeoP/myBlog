@@ -18,7 +18,18 @@ export function LatestPost({ post, className }) {
 
   return (
     <section className="py-12 px-4 sm:px-8 md:px-12">
-      <h2 className="text-2xl font-bold text-black mb-8">Latest Post</h2>
+     <div className="mb-8 text-center">
+  <span className="inline-block mb-2 text-sm font-semibold text-indigo-500 bg-indigo-50 px-3 py-1 rounded-full">
+    From the Blog
+  </span>
+  <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
+    Discover Our Latest Insights
+  </h2>
+  <p className="mt-2 text-base text-gray-600 max-w-2xl mx-auto">
+    Stay updated with our latest thoughts, tips, and tutorials to keep you inspired.
+  </p>
+</div>
+
 
       <article
         className={cn(
@@ -26,14 +37,13 @@ export function LatestPost({ post, className }) {
           className
         )}
       >
-        <div className="w-full md:w-1/2 h-full">
-          <img
-            src={imageUrl}
-            alt={post.title}
-            className="w-full h-full object-cover md:rounded-l-xl"
-          />
-        </div>
-
+        <div className="w-full">
+        <img
+          src={imageUrl}
+          alt={post.title}
+          className="w-full object-cover rounded-t-xl md:rounded-none"
+        />
+      </div>
         {/* Content */}
         <div className="p-6 sm:p-8 md:p-10 flex flex-col justify-between w-full text-black">
           <div className="space-y-6">
