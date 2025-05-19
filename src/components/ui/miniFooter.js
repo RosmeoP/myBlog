@@ -15,9 +15,9 @@ export default function MiniPostFooter() {
           <Link href="/blog" className="hover:text-black transition-colors">
             More Posts
           </Link>
-          <Link href="/contact" className="hover:text-black transition-colors">
+          {/* <Link href="/contact" className="hover:text-black transition-colors">
             Contact
-          </Link>
+          </Link> */}
         </div>
       </div>
     </footer>

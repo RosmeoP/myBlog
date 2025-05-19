@@ -44,7 +44,7 @@ const View = () => {
           />
         </div>
 
-        <ShinyText text="Click see to read my blog!" disabled={false} speed={3} className='custom-class' />
+        <ShinyText text="Click to read my blog!" disabled={false} speed={3} className='custom-class' />
       </div>
     </div>
   );
