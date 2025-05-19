@@ -1,10 +1,10 @@
 'use client';
-
 import MobileSidebar from './mobileSideBar';
 import Sidebar from './sideBar';
 import { LatestPost } from './latestPost';
 import { PostPreview } from '../categories/[slug]/postPreview';
 import { posts } from '../../lib/posts';
+import Footer from '@/components/ui/Footer';
 
 const latestPost = posts[0];
 
@@ -30,10 +30,10 @@ const Page = () => {
             <PostPreview key={post.id} post={post} />
           ))}
         </main>
-
-        <aside className="w-full">
-          {/* Optional widgets */}
-        </aside>
+      </div>
+      {/* Footer */}
+      <div className="mt-12">
+        <Footer />
       </div>
     </div>
   );

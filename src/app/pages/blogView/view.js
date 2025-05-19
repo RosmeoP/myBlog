@@ -1,12 +1,9 @@
 'use client'
-
 import SplitText from './SplitText';
 import ShinyText from './ShinyText';
 import Aurora from './Aurora';
 
-const handleAnimationComplete = () => {
-  // Animation complete logic here
-};
+
 
 const View = () => {
   return (
@@ -34,7 +31,6 @@ const View = () => {
             easing="easeOutCubic"
             threshold={0.2}
             rootMargin="-50px"
-            onLetterAnimationComplete={handleAnimationComplete}
           />
           <SplitText
             text={"Blog"}
@@ -45,7 +41,6 @@ const View = () => {
             easing="easeOutCubic"
             threshold={0.2}
             rootMargin="-50px"
-            onLetterAnimationComplete={handleAnimationComplete}
           />
         </div>
 

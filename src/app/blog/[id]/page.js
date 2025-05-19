@@ -3,6 +3,7 @@ import { posts } from '@/lib/posts';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import MiniPostFooter from '@/components/ui/miniFooter';
 
 export default function BlogPost({ params }) {
   const post = posts.find((p) => p.id === params.id);
@@ -55,6 +56,8 @@ export default function BlogPost({ params }) {
           </div>
         </article>
       </div>
+      {/* Footer */}
+      <MiniPostFooter />
     </div>
   );
 }
