@@ -5,15 +5,21 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import MiniPostFooter from '@/components/ui/miniFooter';
 
-export default function BlogPost({ params }) {
+export async function generateStaticParams() {
+  return posts.map((post) => ({
+    id: post.id,
+  }));
+}
+
+export default async function BlogPost({ params }) {
   const post = posts.find((p) => p.id === params.id);
 
   if (!post) return notFound();
 
-  const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+  const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
   });
 
   return (
@@ -32,7 +38,6 @@ export default function BlogPost({ params }) {
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
               {post.title}
             </h1>
-
             <div className="text-sm text-gray-600 mb-4">
               By {post.author.name} · {formattedDate}
             </div>
@@ -56,7 +61,7 @@ export default function BlogPost({ params }) {
           </div>
         </article>
       </div>
-      {/* Footer */}
+
       <MiniPostFooter />
     </div>
   );
