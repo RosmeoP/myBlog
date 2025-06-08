@@ -4,7 +4,6 @@ import { cn } from '../../lib/utils';
 import { ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
-import MiniPostFooter from '@/components/ui/miniFooter';
 
 export function LatestPost({ post, className }) {
   const [isHovered, setIsHovered] = useState(false);

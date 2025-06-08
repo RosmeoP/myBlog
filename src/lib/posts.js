@@ -1,17 +1,17 @@
-// lib/posts.js
 
 
 export const posts = [
-  {
-    id: '1',
-    title: 'Outdoor boys goodbye',
-    content: 'Really sad that Outdoor boys is ending. I have been watching them for a long time and they have inspired me to go outside and explore the world around me. I will miss their videos and the adventures they took us on. I hope they come back in some form in the future. I gotta respect their decision prefering to focus on their family rather than being famous, a complicated decision that not everyone can make. I wish them the best of luck in their future endeavors.',
-    imageUrl: 'https://preview.redd.it/goodbye-from-luke-nichols-outdoor-boys-v0-f1xye7ftrb1f1.png?width=1080&crop=smart&auto=webp&s=51d3592ee12ccb9c7ecd72b0f1c464a048acd965',
-    category: 'Outdoor',
+   {
+    id: '8',
+    title: 'matt 6:33',
+    content: 'But seek first the kingdom of God and his righteousness, and all these things will be added to you. Put god first, he takes careof the rest. This verse reminds us to prioritize our spiritual life and trust that our needs will be met when we focus on God’s kingdom. I think this is a great reminder for all of us, especially in today’s fast-paced world where we often get caught up in our daily routines and forget to prioritize our spiritual life. By seeking God first, we can find peace and fulfillment in our lives. ',
+    imageUrl: 'https://i.pinimg.com/736x/6f/1b/b8/6f1bb869b2632e4e08fb6598e9ef676d.jpg',
+    category: 'Faith', 
     author: { name: 'Rosmeo' },
-    date: '2025-05-19',
-    excerpt: 'Retiring from youtube',
+    date: '2025-06-05',
+    excerpt: 'A reflection on Matthew 6:33 and the importance of prioritizing spiritual life.',
     readTime: '2 min',
+
   },
   {
     id: '2',
@@ -78,8 +78,19 @@ export const posts = [
     date: '2025-06-01',
     excerpt: 'Exploring the principles of user experience design and its importance in creating intuitive interfaces.',
     readTime: '6 min',
-  }
-
+  },
+  {
+    id: '1',
+    title: 'Outdoor boys goodbye',
+    content: 'Really sad that Outdoor boys is ending. I have been watching them for a long time and they have inspired me to go outside and explore the world around me. I will miss their videos and the adventures they took us on. I hope they come back in some form in the future. I gotta respect their decision prefering to focus on their family rather than being famous, a complicated decision that not everyone can make. I wish them the best of luck in their future endeavors.',
+    imageUrl: 'https://preview.redd.it/goodbye-from-luke-nichols-outdoor-boys-v0-f1xye7ftrb1f1.png?width=1080&crop=smart&auto=webp&s=51d3592ee12ccb9c7ecd72b0f1c464a048acd965',
+    category: 'Outdoor',
+    author: { name: 'Rosmeo' },
+    date: '2025-05-19',
+    excerpt: 'Retiring from youtube',
+    readTime: '2 min',
+  },
+ 
 ];
 
 
